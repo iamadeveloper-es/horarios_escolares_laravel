@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Seller;
+namespace App\Http\Controllers\Student;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -8,6 +8,6 @@ class DashboardController extends Controller {
     $this->middleware('auth');
   }
   public function index() {
-    return view('seller.dashboard');
+    return view('student.dashboard');
   }
 }

@@ -22,4 +22,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin_dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->middleware('role:admin');
-Route::get('/seller_dashboard',  [App\Http\Controllers\Seller\DashboardController::class, 'index'])->middleware('role:seller');
+Route::get('/student_dashboard',  [App\Http\Controllers\Student\DashboardController::class, 'index'])->middleware('role:student');
