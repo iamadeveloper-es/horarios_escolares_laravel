@@ -58,6 +58,19 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if (Auth::user()->role == 'student')
+                                        <a class="dropdown-item" href="{{ url('student_dashboard') }}">
+                                            {{ __('Student Panel') }}
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('profile.show') }}">
+                                            {{ __('Student Profile') }}
+                                        </a>
+                                    @endif
+                                    @if (Auth::user()->role == 'admin')
+                                        <a class="dropdown-item" href="{{ url('admin_dashboard') }}">
+                                            {{ __('Admin Panel') }}
+                                        </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
