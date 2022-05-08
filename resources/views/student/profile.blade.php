@@ -14,9 +14,17 @@
                         </div>
                     @endif
 
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>	
+                                <strong>{{ $message }}</strong>
+                        </div>
+                    @endif
+
                     {{ __('Hello STUDENT, Profile!') }}
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                    <form action="{{route('student')}}" method="POST" enctype="multipart/form-data">
+                        @method('PATCH')
+                        @csrf  
 
                         <div class="row mb-3">
 

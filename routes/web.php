@@ -23,4 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/admin_dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->middleware('role:admin');
 Route::get('/student_dashboard',  [App\Http\Controllers\Student\DashboardController::class, 'index'])->middleware('role:student');
+Route::patch('/student_dashboard',  [App\Http\Controllers\Student\DashboardController::class, 'profileUpdate'])->middleware('role:student')->name('student');
 Route::get('/student_profile',  [App\Http\Controllers\Student\DashboardController::class, 'show'])->middleware('role:student')->name('profile.show');
